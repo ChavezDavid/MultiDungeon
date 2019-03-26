@@ -11,7 +11,7 @@ public class Archer : Player
     void Start()
     {
         anim = GetComponent<Animator>();
-        arrow = Resources.Load("archergirl") as GameObject;
+        arrow = Resources.Load("Cube") as GameObject;
     }
 
     // Update is called once per frame
@@ -51,7 +51,7 @@ public class Archer : Player
             AttackControl(anim, 0);
         }
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             ShootArrow();
         }
@@ -61,5 +61,7 @@ public class Archer : Player
     {
         GameObject newArrow = Instantiate(arrow) as GameObject;
         newArrow.transform.position = transform.position;
+        Rigidbody rbArrow = newArrow.GetComponent<Rigidbody>();
+        rbArrow.velocity = transform.forward*15;
     }
 }
