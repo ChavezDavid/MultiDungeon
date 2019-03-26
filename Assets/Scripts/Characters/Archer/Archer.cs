@@ -33,15 +33,9 @@ public class Archer : Character3D {
 	}
 
 	override protected void Move() {
-        if (Controllers.GetFire(1, 0)) {
-            movementSpeed = 0;
-            anim.SetFloat("Velocity", 0f);
-        }
-        else {
-            movementSpeed = originalMovementSpeed;
-            anim.SetFloat("Velocity", Mathf.Abs(Controllers.Axis.magnitude));
-        }
         base.Move();
+        animator.SetFloat("move", Mathf.Abs(Controllers.Axis.magnitude));
+
     }
 
 	override protected void Attack() {

@@ -13,7 +13,8 @@ public class DamageMage : Character3D {
 
     [SerializeField]
     AudioClip audioFireCast;
-
+    [SerializeField]
+    AudioClip caminar;
     protected override void Start() {
         usesMana = true;
         base.Start();
@@ -21,7 +22,9 @@ public class DamageMage : Character3D {
 
     override protected void Move() {
         base.Move();
-        animator.SetFloat("Velocity", Mathf.Abs(Controllers.Axis.magnitude));
+        animator.SetFloat("move", Mathf.Abs(Controllers.Axis.magnitude));
+       
+
     }
 
     protected override void Attack() {
