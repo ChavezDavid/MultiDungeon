@@ -1,25 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
-    public GameObject target;
+    public Transform target;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        target = GameObject.FindWithTag("Player");
-    }
+    public float smoothSpeed = 0.125f;
+    public Vector3 offset;
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
-    }
+        Vector3 desiredPosition = target.position + offset;
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        transform.position = smoothedPosition;
 
-    void LateUpdate()
-    {
-        Camera.main.transform.LookAt(target.transform);
+        transform.LookAt(target);
     }
 }
