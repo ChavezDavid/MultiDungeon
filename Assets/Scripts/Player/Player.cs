@@ -15,11 +15,11 @@ public class Player : Follower
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            Move(Vector3.forward);
+            Move(Vector3.forward, 1);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            Move(-Vector3.forward);
+            Move(-Vector3.forward, 1);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -28,6 +28,14 @@ public class Player : Follower
         if (Input.GetKey(KeyCode.RightArrow))
         {
             Rotate(1);
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            Move(Vector3.forward, 0);
+        }
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            Move(-Vector3.forward, 0);
         }
     }
 

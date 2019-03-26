@@ -28,8 +28,9 @@ public class NPC : Character
         
     }
 
-    public void Move(Vector3 v3)
+    public void Move(Vector3 v3, int i)
     {
+        anim.SetInteger("move", i);
         transform.Translate(v3 * moveSpeed * Time.deltaTime);
     }
 
