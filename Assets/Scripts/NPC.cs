@@ -8,13 +8,11 @@ public class NPC : Character
     public float turnSpeed;
 
     Rigidbody rb;
-    Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,7 +26,7 @@ public class NPC : Character
         
     }
 
-    public void Move(Vector3 v3, int i)
+    public void Move(Vector3 v3, int i, Animator anim)
     {
         anim.SetInteger("move", i);
         transform.Translate(v3 * moveSpeed * Time.deltaTime);

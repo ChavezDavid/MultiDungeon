@@ -4,49 +4,28 @@ using UnityEngine;
 
 public class Player : Follower
 {
+    
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            Move(Vector3.forward, 1);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            Move(-Vector3.forward, 1);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            Rotate(-1);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            Rotate(1);
-        }
-        if (Input.GetKeyUp(KeyCode.UpArrow))
-        {
-            Move(Vector3.forward, 0);
-        }
-        if (Input.GetKeyUp(KeyCode.DownArrow))
-        {
-            Move(-Vector3.forward, 0);
-        }
+        
     }
 
-    public void MoveControl()
+    public void MoveControl(Vector3 v3, int i, Animator anim)
     {
-
+        Move(v3, i, anim);
     }
 
-    public void AttackControl()
+    public void AttackControl(Animator anim, int i)
     {
-
+        Attack(anim, i);
     }
 
     public void BlockControll()

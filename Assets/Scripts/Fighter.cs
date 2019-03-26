@@ -12,7 +12,7 @@ public class Fighter : NPC
     // Start is called before the first frame update
     void Start()
     {
-        Attack();
+
     }
 
     // Update is called once per frame
@@ -21,8 +21,9 @@ public class Fighter : NPC
         
     }
 
-    public void Attack()
+    public void Attack(Animator anim, int i)
     {
+        anim.SetInteger("attack", i);
         BasicAttack();
         CriticAttack();
     }
