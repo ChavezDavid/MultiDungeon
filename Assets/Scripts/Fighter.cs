@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Fighter : NPC
 {
-    public int attackDamage;
-    public int damageBlock;
+    public int attackDamage = 15;
+    public int damageBlock = 10;
     public GameObject target;
-    public int lifePoints;
+    public int lifePoints = 50;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Attack();
     }
 
     // Update is called once per frame
@@ -23,7 +23,8 @@ public class Fighter : NPC
 
     public void Attack()
     {
-
+        BasicAttack();
+        CriticAttack();
     }
 
     public void Block()
@@ -40,4 +41,5 @@ public class Fighter : NPC
     {
 
     }
+
 }

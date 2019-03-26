@@ -38,4 +38,15 @@ public class NPC : Character
     {
         transform.Rotate(Vector3.up * i * turnSpeed * Time.deltaTime);
     }
+
+    protected virtual void BasicAttack()
+    {
+
+    }
+
+    protected virtual void CriticAttack()
+    {
+
+    }
+
 }
